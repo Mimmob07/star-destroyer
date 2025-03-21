@@ -35,19 +35,19 @@ fn main() -> anyhow::Result<()> {
         esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio23)?,
     ));
     let buildup1 = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio1)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio8)?,
     ));
     let buildup2 = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio2)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio7)?,
     ));
     let buildup3 = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio3)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio6)?,
     ));
     let hyperspace_left = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio4)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio18)?,
     ));
     let hyperspace_right = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio5)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio19)?,
     ));
 
     let mut server = esp_idf_svc::http::server::EspHttpServer::new(
