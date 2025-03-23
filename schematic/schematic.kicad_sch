@@ -2343,6 +2343,16 @@
 		)
 		(uuid "02149b5a-a063-4627-ae12-87814f9176bb")
 	)
+	(text "1: Gate\n2: Drain\n3: Source"
+		(exclude_from_sim no)
+		(at 29.464 17.018 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "03a183a8-cf9b-4784-a6e4-e0ce28674eb9")
+	)
 	(text "S"
 		(exclude_from_sim no)
 		(at 164.084 98.298 90)
@@ -2352,16 +2362,6 @@
 			)
 		)
 		(uuid "0b9b1071-fc58-48ec-b974-06eedc07fbcf")
-	)
-	(text "G"
-		(exclude_from_sim no)
-		(at 22.606 17.78 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "0bd15349-6e6f-4bc9-8718-9311c978d690")
 	)
 	(text "D"
 		(exclude_from_sim no)
@@ -2422,16 +2422,6 @@
 			)
 		)
 		(uuid "3dd708a0-a424-4d0f-bc4a-0be3956bf1e4")
-	)
-	(text "D"
-		(exclude_from_sim no)
-		(at 26.924 22.86 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "42c81930-080e-44cf-af47-433195693883")
 	)
 	(text "Laser LEDs\n20mA\n2-2.2V"
 		(exclude_from_sim no)
@@ -2572,16 +2562,6 @@
 			)
 		)
 		(uuid "e3c96d69-cf4e-437e-9414-218eda0346a5")
-	)
-	(text "S"
-		(exclude_from_sim no)
-		(at 16.51 22.86 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "e7582ff4-c6bb-4b22-92cd-4ca33cef4e30")
 	)
 	(junction
 		(at 146.05 109.22)
@@ -3167,16 +3147,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 50.8) (xy 134.62 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d519c01-ec9c-402f-8da0-a93bb0db6775")
-	)
-	(wire
-		(pts
 			(xy 124.46 109.22) (xy 124.46 135.89)
 		)
 		(stroke
@@ -3234,6 +3204,16 @@
 			(type default)
 		)
 		(uuid "8a70bccc-6932-4ab9-9aab-2d789525e4d7")
+	)
+	(wire
+		(pts
+			(xy 134.62 58.42) (xy 134.62 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8efcf4a1-a4fd-4185-98ae-e4ce038501be")
 	)
 	(wire
 		(pts
@@ -4588,7 +4568,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:IRLZ34N")
-		(at 21.59 21.59 270)
+		(at 19.05 19.05 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4597,7 +4577,7 @@
 		(fields_autoplaced yes)
 		(uuid "653480ee-612c-4755-b758-532e1dfd7411")
 		(property "Reference" "Q1"
-			(at 21.59 27.94 90)
+			(at 19.05 25.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4605,7 +4585,7 @@
 			)
 		)
 		(property "Value" "IRLZ34N"
-			(at 21.59 30.48 90)
+			(at 19.05 27.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4613,7 +4593,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 19.685 26.67 0)
+			(at 17.145 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4624,7 +4604,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.infineon.com/dgdl/irlz34npbf.pdf?fileId=5546d462533600a40153567206892720"
-			(at 17.78 26.67 0)
+			(at 15.24 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4634,7 +4614,7 @@
 			)
 		)
 		(property "Description" "30A Id, 55V Vds, 35mOhm Rds, N-Channel HEXFET Power MOSFET, TO-220AB"
-			(at 21.59 21.59 0)
+			(at 19.05 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4944,7 +4924,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 134.62 85.09 90)
+		(at 134.62 54.61 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4952,7 +4932,7 @@
 		(dnp no)
 		(uuid "8856eba3-ced3-436e-89a9-cf68710d7a77")
 		(property "Reference" "D5"
-			(at 138.43 85.4074 90)
+			(at 138.43 54.9274 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4961,7 +4941,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 138.43 87.9474 90)
+			(at 138.43 57.4674 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4970,7 +4950,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 134.62 85.09 0)
+			(at 134.62 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4979,7 +4959,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 134.62 85.09 0)
+			(at 134.62 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4988,7 +4968,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 134.62 85.09 0)
+			(at 134.62 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
