@@ -31,7 +31,7 @@ fn main() -> anyhow::Result<()> {
 
     log::info!("Wifi started!");
 
-    let laser_mosfet = std::sync::Arc::new(std::sync::Mutex::new(
+    let laser = std::sync::Arc::new(std::sync::Mutex::new(
         esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio23)?,
     ));
     let buildup1 = std::sync::Arc::new(std::sync::Mutex::new(
@@ -43,11 +43,8 @@ fn main() -> anyhow::Result<()> {
     let buildup3 = std::sync::Arc::new(std::sync::Mutex::new(
         esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio6)?,
     ));
-    let hyperspace_left = std::sync::Arc::new(std::sync::Mutex::new(
+    let hyperspace = std::sync::Arc::new(std::sync::Mutex::new(
         esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio18)?,
-    ));
-    let hyperspace_right = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio19)?,
     ));
 
     let mut server = esp_idf_svc::http::server::EspHttpServer::new(
@@ -114,9 +111,9 @@ fn main() -> anyhow::Result<()> {
             buildup2.lock().unwrap().set_low()?;
             buildup3.lock().unwrap().set_low()?;
 
-            laser_mosfet.lock().unwrap().set_high()?;
+            laser.lock().unwrap().set_high()?;
             std::thread::sleep(std::time::Duration::from_secs(1));
-            laser_mosfet.lock().unwrap().set_low()?;
+            laser.lock().unwrap().set_low()?;
 
             Ok(())
         },
@@ -142,13 +139,9 @@ fn main() -> anyhow::Result<()> {
             let mut response = request.into_ok_response()?;
             response.write_all(html.as_bytes())?;
 
-            hyperspace_right.lock().unwrap().set_high()?;
-            hyperspace_left.lock().unwrap().set_high()?;
-
+            hyperspace.lock().unwrap().set_high()?;
             std::thread::sleep(std::time::Duration::from_secs(4));
-
-            hyperspace_right.lock().unwrap().set_low()?;
-            hyperspace_left.lock().unwrap().set_low()?;
+            hyperspace.lock().unwrap().set_low()?;
 
             Ok(())
         },
