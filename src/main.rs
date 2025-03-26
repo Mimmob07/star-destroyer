@@ -35,13 +35,13 @@ fn main() -> anyhow::Result<()> {
         esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio23)?,
     ));
     let buildup1 = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio8)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio27)?,
     ));
     let buildup2 = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio7)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio26)?,
     ));
     let buildup3 = std::sync::Arc::new(std::sync::Mutex::new(
-        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio6)?,
+        esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio25)?,
     ));
     let hyperspace = std::sync::Arc::new(std::sync::Mutex::new(
         esp_idf_svc::hal::gpio::PinDriver::output(peripherals.pins.gpio18)?,
@@ -104,11 +104,11 @@ fn main() -> anyhow::Result<()> {
             std::thread::sleep(std::time::Duration::from_millis(250));
             buildup2.lock().unwrap().set_high()?;
             std::thread::sleep(std::time::Duration::from_millis(250));
+            buildup1.lock().unwrap().set_low()?;
             buildup3.lock().unwrap().set_high()?;
             std::thread::sleep(std::time::Duration::from_millis(250));
-
-            buildup1.lock().unwrap().set_low()?;
             buildup2.lock().unwrap().set_low()?;
+            std::thread::sleep(std::time::Duration::from_millis(250));
             buildup3.lock().unwrap().set_low()?;
 
             laser.lock().unwrap().set_high()?;
